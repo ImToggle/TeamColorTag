@@ -1,4 +1,4 @@
-package me.imtoggle.teamcolortag.mixin;
+package me.imtoggle.teamcolortag.mixin.vanilla;
 
 import me.imtoggle.teamcolortag.hook.ScorePlayerTeamHook;
 import net.minecraft.client.Minecraft;

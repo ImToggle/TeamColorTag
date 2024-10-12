@@ -8,9 +8,12 @@
   },
   "verbose": true,
   "client": [
-    "RendererLivingEntityMixin",
-    "RenderMixin",
-    "RenderPlayerMixin",
-    "ScorePlayerTeamMixin"
+    "vanilla.RendererLivingEntityMixin",
+    "vanilla.RenderMixin",
+    "vanilla.RenderPlayerMixin",
+    "vanilla.ScorePlayerTeamMixin"
+  ],
+  "mixins": [
+    "polynametag.NametagRenderingMixin"
   ]
 }
