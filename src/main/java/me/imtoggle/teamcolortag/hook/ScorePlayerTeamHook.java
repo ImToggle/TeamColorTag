@@ -1,7 +1,9 @@
 package me.imtoggle.teamcolortag.hook;
 
+import java.awt.*;
+
 public interface ScorePlayerTeamHook {
 
-    int teamColorTag$getTeamColor();
+    Color teamColorTag$getTeamColor();
 
 }

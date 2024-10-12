@@ -10,14 +10,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.awt.*;
+
 @Mixin(ScorePlayerTeam.class)
 public class ScorePlayerTeamMixin implements ScorePlayerTeamHook {
 
     @Unique
-    private int teamColorTag$teamColor = 0x00000000;
+    private Color teamColorTag$teamColor = new Color(0x00000000);
 
     @Override
-    public int teamColorTag$getTeamColor() {
+    public Color teamColorTag$getTeamColor() {
         return teamColorTag$teamColor;
     }
 
@@ -25,7 +27,7 @@ public class ScorePlayerTeamMixin implements ScorePlayerTeamHook {
     private void updateColor(String prefix, CallbackInfo ci) {
         String s = FontRenderer.getFormatFromString(prefix);
         if (s.length() >= 2) {
-            teamColorTag$teamColor = Minecraft.getMinecraft().fontRendererObj.getColorCode(s.charAt(1));
+            teamColorTag$teamColor = new Color(Minecraft.getMinecraft().fontRendererObj.getColorCode(s.charAt(1)));
         }
     }
 }

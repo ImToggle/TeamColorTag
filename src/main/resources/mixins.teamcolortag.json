@@ -8,7 +8,9 @@
   },
   "verbose": true,
   "client": [
-    "ScorePlayerTeamMixin",
-    "RenderPlayerMixin"
+    "RendererLivingEntityMixin",
+    "RenderMixin",
+    "RenderPlayerMixin",
+    "ScorePlayerTeamMixin"
   ]
 }

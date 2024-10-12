@@ -3,16 +3,17 @@ package me.imtoggle.teamcolortag
 import me.imtoggle.teamcolortag.hook.ScorePlayerTeamHook
 import net.minecraft.client.entity.AbstractClientPlayer
 import net.minecraft.scoreboard.ScorePlayerTeam
+import java.awt.Color
 
 @JvmField
 var renderingPlayer = false
 
 @JvmField
-var bgColor = 0
+var bgColor = Color(0)
 
 fun preRender(player: AbstractClientPlayer) {
-    renderingPlayer = true
     player.team ?: return
+    renderingPlayer = true
     bgColor = (player.team as ScorePlayerTeam as ScorePlayerTeamHook).`teamColorTag$getTeamColor`()
 }
 
