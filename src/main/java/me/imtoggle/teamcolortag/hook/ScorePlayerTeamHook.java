@@ -1,9 +1,9 @@
 package me.imtoggle.teamcolortag.hook;
 
-import java.awt.*;
+import cc.polyfrost.oneconfig.config.core.OneColor;
 
 public interface ScorePlayerTeamHook {
 
-    Color teamColorTag$getTeamColor();
+    OneColor teamColorTag$getTeamColor();
 
 }

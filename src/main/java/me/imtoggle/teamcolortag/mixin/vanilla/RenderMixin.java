@@ -17,4 +17,5 @@ public class RenderMixin {
         args.set(1, UtilKt.bgColor.getGreen() / 255f);
         args.set(2, UtilKt.bgColor.getBlue() / 255f);
     }
+
 }

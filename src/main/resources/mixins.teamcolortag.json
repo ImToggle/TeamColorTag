@@ -10,7 +10,6 @@
   "client": [
     "vanilla.RendererLivingEntityMixin",
     "vanilla.RenderMixin",
-    "vanilla.RenderPlayerMixin",
     "vanilla.ScorePlayerTeamMixin"
   ],
   "mixins": [

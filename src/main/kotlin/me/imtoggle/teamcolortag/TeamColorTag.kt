@@ -11,6 +11,7 @@ object TeamColorTag {
 
     @Mod.EventHandler
     fun onInit(event: FMLInitializationEvent) {
-        ModConfig
+        ModConfig.initialize()
+        EventHandler.initialize()
     }
 }

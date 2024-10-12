@@ -7,12 +7,9 @@ import cc.polyfrost.oneconfig.config.data.*
 object ModConfig : Config(Mod(TeamColorTag.NAME, ModType.UTIL_QOL), "${TeamColorTag.MODID}.json") {
 
     @Slider(
-        name = "Brightness",
-        min = 0f, max = 1f
+        name = "Brightness (%)",
+        min = 0f, max = 100f
     )
-    var brightness = 1f
+    var brightness = 100
 
-    init {
-        initialize()
-    }
 }
