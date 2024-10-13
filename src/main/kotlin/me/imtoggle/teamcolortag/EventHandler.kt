@@ -17,6 +17,7 @@ object EventHandler {
 
     @SubscribeEvent
     fun preRender(event: RenderLivingEvent.Specials.Pre<EntityLivingBase>) {
+        if (!ModConfig.enabled) return
         if (event.entity !is EntityPlayer) return
         event.entity.team ?: return
         renderingPlayer = true
@@ -26,6 +27,7 @@ object EventHandler {
 
     @SubscribeEvent
     fun postRender(event: RenderLivingEvent.Specials.Post<EntityLivingBase>) {
+        if (!ModConfig.enabled) return
         renderingPlayer = false
     }
 }
