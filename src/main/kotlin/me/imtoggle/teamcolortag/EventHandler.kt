@@ -1,5 +1,6 @@
 package me.imtoggle.teamcolortag
 
+import cc.polyfrost.oneconfig.config.core.OneColor
 import me.imtoggle.teamcolortag.hook.ScorePlayerTeamHook
 import net.minecraft.entity.EntityLivingBase
 import net.minecraft.entity.player.EntityPlayer
@@ -19,8 +20,8 @@ object EventHandler {
         if (event.entity !is EntityPlayer) return
         event.entity.team ?: return
         renderingPlayer = true
-        bgColor = (event.entity.team as ScorePlayerTeam as ScorePlayerTeamHook).`teamColorTag$getTeamColor`()
-        bgColor.setHSBA(bgColor.hue, bgColor.saturation, ModConfig.brightness, bgColor.alpha)
+        val color = (event.entity.team as ScorePlayerTeam as ScorePlayerTeamHook).`teamColorTag$getTeamColor`()
+        bgColor = OneColor(getHue(color.hue), getSaturation(color.saturation), getBrightness(color.brightness), 255, -1)
     }
 
     @SubscribeEvent
