@@ -21,7 +21,7 @@ object ModConfig : Config(Mod(TeamColorTag.NAME, ModType.UTIL_QOL), "${TeamColor
         min = 0f, max = 360f,
         subcategory = "Hue"
     )
-    var hueValue = 50
+    var hueValue = 0
 
     @Slider(
         name = "Offset",
@@ -75,5 +75,15 @@ object ModConfig : Config(Mod(TeamColorTag.NAME, ModType.UTIL_QOL), "${TeamColor
         subcategory = "Brightness"
     )
     var brightnessOffset = 0
+
+    init {
+        initialize()
+        hideIf("hueValue") { hueMode }
+        hideIf("hueOffset") { !hueMode }
+        hideIf("saturationValue") { saturationMode }
+        hideIf("saturationOffset") { !saturationMode }
+        hideIf("brightnessValue") { brightnessMode }
+        hideIf("brightnessOffset") { !brightnessMode }
+    }
 
 }
