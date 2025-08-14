@@ -1,6 +1,6 @@
-package me.imtoggle.teamcolortag.mixin.polynametag;
+package me.imtoggle.teamcolorutils.mixin.polynametag;
 
-import me.imtoggle.teamcolortag.UtilKt;
+import me.imtoggle.teamcolorutils.UtilKt;
 import org.polyfrost.polynametag.render.NametagRenderingKt;
 import org.spongepowered.asm.mixin.Dynamic;
 import org.spongepowered.asm.mixin.Mixin;

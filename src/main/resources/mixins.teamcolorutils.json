@@ -1,0 +1,21 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.7",
+  "package": "me.imtoggle.teamcolorutils.mixin",
+  "refmap": "mixins.teamcolorutils.refmap.json",
+  "injectors": {
+    "maxShiftBy": 5
+  },
+  "verbose": true,
+  "client": [
+    "vanilla.nametag.RendererLivingEntityMixin",
+    "vanilla.hitbox.RenderGlobalMixin",
+    "vanilla.hitbox.RenderManagerMixin",
+    "vanilla.nametag.RenderMixin",
+    "vanilla.nametag.ScorePlayerTeamMixin"
+  ],
+  "mixins": [
+    "polyhitbox.HitboxRendererMixin",
+    "polynametag.NametagRenderingMixin"
+  ]
+}

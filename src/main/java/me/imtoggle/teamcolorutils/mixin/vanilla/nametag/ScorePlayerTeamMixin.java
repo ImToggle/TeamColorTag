@@ -1,8 +1,6 @@
-package me.imtoggle.teamcolortag.mixin.vanilla;
+package me.imtoggle.teamcolorutils.mixin.vanilla.nametag;
 
-import cc.polyfrost.oneconfig.config.core.OneColor;
-import me.imtoggle.teamcolortag.hook.ScorePlayerTeamHook;
-import net.minecraft.client.Minecraft;
+import me.imtoggle.teamcolorutils.hook.ScorePlayerTeamHook;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,10 +13,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ScorePlayerTeamMixin implements ScorePlayerTeamHook {
 
     @Unique
-    private OneColor teamColorTag$teamColor = new OneColor(0x00000000);
+    private char teamColorTag$teamColor = '0';
 
     @Override
-    public OneColor teamColorTag$getTeamColor() {
+    public char teamColorTag$getTeamColor() {
         return teamColorTag$teamColor;
     }
 
@@ -26,7 +24,7 @@ public class ScorePlayerTeamMixin implements ScorePlayerTeamHook {
     private void updateColor(String prefix, CallbackInfo ci) {
         String s = FontRenderer.getFormatFromString(prefix);
         if (s.length() >= 2) {
-            teamColorTag$teamColor = new OneColor(Minecraft.getMinecraft().fontRendererObj.getColorCode(s.charAt(1)));
+            teamColorTag$teamColor = s.charAt(1);
         }
     }
 }
